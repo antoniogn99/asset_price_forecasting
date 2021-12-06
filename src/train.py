@@ -22,10 +22,12 @@ def get_score(y, preds):
             score += 1
         elif preds[i] == "NEGATIVE" and y[i] == "NEGATIVE":
             score += 1
+        '''
         elif preds[i] == "POSITIVE" and y[i] == "NEGATIVE":
             score -= 1
         elif preds[i] == "NEGATIVE" and y[i] == "POSITIVE":
             score -= 1
+        '''
 
     score = 100 * score / len(preds)
     return score
@@ -303,4 +305,5 @@ def exploring():
 if __name__ == "__main__":
     config.TRAIN_FILE = config.INPUT_FILE
     train_gbc()
-    print("Model ready")
+    model = joblib.load(os.path.join(config.MODEL_OUTPUT, "gbc.bin"))
+    test(model)
