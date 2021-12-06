@@ -3,4 +3,4 @@ Goal: To forecast variations in the price of a given financial asset predicting 
 
 Evaluation metric: Accuracy
 
-Score: 70%
+Score: 54.33%
